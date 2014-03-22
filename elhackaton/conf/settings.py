@@ -56,8 +56,8 @@ class Common(Configuration):
     WSGI_APPLICATION = 'conf.wsgi.application'
     SECRET_KEY = 'not-so-secret'
 
-    TIME_ZONE = 'UTC'
-    LANGUAGE_CODE = 'en-us'
+    TIME_ZONE = 'Europe/Madrid'
+    LANGUAGE_CODE = 'es-ES'
 
     USE_I18N = True
     USE_L10N = True
@@ -110,7 +110,7 @@ class Local(Common):
     DEBUG = True
     TEMPLATE_DEBUG = DEBUG
 
-    INSTALLED_APPS = Common.INSTALLED_APPS + ('debug_toolbar',)
+    # INSTALLED_APPS = Common.INSTALLED_APPS + ('debug_toolbar',)
 
     DATABASES = values.DatabaseURLValue(
         'postgres://postgres:password@localhost/elhackaton')
@@ -121,16 +121,16 @@ class Local(Common):
         os.path.join(BASE_DIR, 'static'),
     )
 
-    MIDDLEWARE_CLASSES = Common.MIDDLEWARE_CLASSES + (
-        'debug_toolbar.middleware.DebugToolbarMiddleware',
-    )
+    # MIDDLEWARE_CLASSES = Common.MIDDLEWARE_CLASSES + (
+    #     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    # )
 
-    INTERNAL_IPS = ('127.0.0.1',)
+    # INTERNAL_IPS = ('127.0.0.1',)
 
-    DEBUG_TOOLBAR_CONFIG = {
-        'INTERCEPT_REDIRECTS': False,
-        'SHOW_TEMPLATE_CONTEXT': True,
-    }
+    # DEBUG_TOOLBAR_CONFIG = {
+    #     'INTERCEPT_REDIRECTS': False,
+    #     'SHOW_TEMPLATE_CONTEXT': True,
+    # }
 
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
