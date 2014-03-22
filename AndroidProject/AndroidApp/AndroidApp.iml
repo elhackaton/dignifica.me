@@ -72,6 +72,9 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="appcompat-v7-19.0.1" level="project" />
     <orderEntry type="library" exported="" name="support-v4-19.0.1" level="project" />
+    <orderEntry type="library" exported="" name="play-services-4.1.32" level="project" />
+    <orderEntry type="module" module-name="AndroidSlidingUpPanel" exported="" />
+    <orderEntry type="module" module-name="ViewPagerIndicator" exported="" />
   </component>
 </module>
 

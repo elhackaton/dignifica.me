@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:paddingTop="10dp"
+    android:paddingLeft="10dp"
+    android:paddingBottom="14dp"
+    android:background="@drawable/cards_back">
 
+    <TextView android:id="@+id/titulo_oferta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Título oferta"/>
+
+    <TextView android:id="@+id/nombre_empresa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titulo_oferta"
+        android:textColor="@android:color/secondary_text_light"
+        android:layout_marginTop="8dp"
+        android:text="Empresa"/>
 </RelativeLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidApp/AndroidApp.iml" filepath="$PROJECT_DIR$/AndroidApp/AndroidApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidProject.iml" filepath="$PROJECT_DIR$/AndroidProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidSlidingUpPanel/AndroidSlidingUpPanel.iml" filepath="$PROJECT_DIR$/AndroidSlidingUpPanel/AndroidSlidingUpPanel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ViewPagerIndicator/ViewPagerIndicator.iml" filepath="$PROJECT_DIR$/ViewPagerIndicator/ViewPagerIndicator.iml" />
+    </modules>
+  </component>
+</project>
+
