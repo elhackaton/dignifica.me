@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView android:id="@+id/lista_denuncias_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:textSize="26sp"
+        android:gravity="center"
+        android:text="Denuncias"/>
+
+    <ListView android:id="@+id/lista_denuncias"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ddd"
+        android:layout_below="@id/lista_denuncias_titulo"
+        android:layout_above="@+id/lista_denuncias_accion"></ListView>
+
+    <RelativeLayout android:id="@+id/lista_denuncias_accion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:padding="4dp"
+        android:layout_alignParentBottom="true">
+
+        <Button android:id="@+id/denunciar_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Denunciar"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

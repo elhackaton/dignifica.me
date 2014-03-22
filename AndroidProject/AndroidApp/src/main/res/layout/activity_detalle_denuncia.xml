@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="org.hackatonalm.dignificame.DetalleDenuncia">
+
+    <TextView
+        android:text="Tipo de denuncia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:layout_marginBottom="20dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ddd">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Clínica dental situada en Jerez de la Fra precisa incorporar Odontólogo-a generalista para al menos dos días completos a la semana( preferiblemente lunes completos y viernes completos)
+
+Buscamos profesional intersado/a en desarrollarse profesionalmente y trabajar con la tecnología mas avanzada."
+            android:layout_margin="20dp"
+            android:background="#fff"/>
+
+    </ScrollView>
+
+</LinearLayout>
