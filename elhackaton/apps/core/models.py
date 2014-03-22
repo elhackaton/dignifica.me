@@ -8,6 +8,9 @@ class Empresa(models.Model):
     lat = models.FloatField(null=True, blank=True)
     lng = models.FloatField(null=True, blank=True)
 
+    def __unicode__(self):
+        return self.nombre
+
 
 class Oferta(models.Model):
     CATEGORIA_CHOICES = (
@@ -21,6 +24,9 @@ class Oferta(models.Model):
     descripcion = models.TextField(blank=True)
     requisitos = models.TextField(blank=True)
     url = models.URLField(blank=True)
+
+    def __unicode__(self):
+        return self.titulo
 
 
 class OfertaProvider(models.Model):
