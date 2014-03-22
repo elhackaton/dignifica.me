@@ -1,0 +1,4 @@
+-r testing.txt
+
+django-debug-toolbar
+flake8
