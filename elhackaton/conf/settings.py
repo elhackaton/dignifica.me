@@ -25,6 +25,8 @@ class Common(Configuration):
 
     THIRD_PARTY_APPS = (
         #'south',
+        'rest_framework',
+        'bootstrap3',
     )
 
     LOCAL_APPS = (
@@ -57,7 +59,7 @@ class Common(Configuration):
     SECRET_KEY = 'not-so-secret'
 
     TIME_ZONE = 'Europe/Madrid'
-    LANGUAGE_CODE = 'es-ES'
+    LANGUAGE_CODE = 'en-us'
 
     USE_I18N = True
     USE_L10N = True
