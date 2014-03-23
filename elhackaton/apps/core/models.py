@@ -1,3 +1,5 @@
+from geopy.geocoders import GoogleV3
+
 from django.db import models
 
 
@@ -10,6 +12,10 @@ class Empresa(models.Model):
 
     def __unicode__(self):
         return self.nombre
+
+    def set_coordinates(self, codigo_postal, ciudad):
+        self.lat, self.lng = GoogleV3().geocode('%s, %s' % (codigo_postal, ciudad))[1]
+        self.save()
 
 
 class Oferta(models.Model):
