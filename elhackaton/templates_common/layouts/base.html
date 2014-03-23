@@ -19,10 +19,26 @@
         <!--[if lt IE 9]>
         <script src="js/html5shiv.js"></script>
         <![endif]-->
-
-        <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" />
     </head>
     <body>
+        <div class="container">
+    <div class="row clearfix">
+        <div class="col-md-6 column">
+            {% load staticfiles %}
+            <h1 class="logo"><a href="/" title="Inicio">Dignifica.me</a></h1>
+        </div>
+        <div class="col-md-6 column">
+            <p class="parrafo-header">
+                Dignifica.me es un proyecto <a href="">opensource</a> para localizar ofertas de trabajo
+                y denunciar aquellas  que consideres abusivas. ¡Por un trabajo digno!
+            </p>
+        </div>
+    </div>
+    <div class="row clearfix">
+
+    </div>
+</div>
+
         {% block content %}{% endblock content %}
 
         {% block js %}

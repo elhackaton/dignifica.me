@@ -1,8 +1,24 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Courgette:400,700);
 
 html, body {
 	width: 100%;
 	height: 100%;
+}
+
+h1.logo {
+	font-family: 'Courgette', sans-serif;
+	font-weight: 400;
+	font-size: 5em;
+	margin-top: 0.2em;
+}
+
+h1.logo a {
+    color: #000;
+}
+
+h1.logo a:hover {
+    text-decoration: none;
 }
 
 #footer {
@@ -19,12 +35,12 @@ html, body {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 400;
 	padding: 1em;
-	margin-top: 2em;
+	margin-top: 1em;
 	font-size: 16px;
 }
 
 .divfiltros {
-	padding: 2em;
+	padding: 1em;
 	text-align: center;
 }
 
@@ -56,6 +72,7 @@ html, body {
 	width: 50px;
 	height: 50px;
 }
+
 
 .map-oferta {
 	padding-top: 4em;

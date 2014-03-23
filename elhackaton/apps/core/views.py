@@ -5,7 +5,7 @@ from .forms import NuevaDenunciaForm, BuscarOfertasForm
 
 
 def index(request):
-    ofertas = Oferta.objects.all()
+    ofertas = Oferta.objects.all().order_by('-id')
     if request.method == 'POST':
         form = BuscarOfertasForm(request.POST)
         if form.is_valid():

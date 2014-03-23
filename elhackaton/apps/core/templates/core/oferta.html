@@ -1,26 +1,12 @@
 {% extends "layouts/base.html" %}
 
 {% block title %}
-    {{ oferta.title }}
+    {{ oferta.titulo }}
 {% endblock title %}
 
 {% block content %}
+    {% load staticfiles %}
     <div class="container">
-    <div class="row clearfix">
-        <div class="col-md-6 column">
-            {% load staticfiles %}
-            <a href="/" title="Inicio"><img src="{% static 'css/logo-web.png' %}" /></a>
-        </div>
-        <div class="col-md-6 column">
-            <p class="parrafo-header">
-                Dignifica.me es un proyecto <a href="">opensource</a> para localizar ofertas de trabajo
-                y denunciar aquellas  que consideres abusivas. ¡Por un trabajo digno!
-            </p>
-        </div>
-    </div>
-    <div class="row clearfix">
-
-    </div>
     <div class="row clearfix">      
         <div class="col-md-6 column">
             <h3>{{ oferta.titulo }}</h3>
@@ -29,14 +15,14 @@
                 <dd>{{ oferta.empresa.ciudad }}</dd>
                 
                 <dt>Categor&iacute;a</dt>
-                <dd>{{ oferta.categoria }}</dd>
+                <dd>{{ oferta.get_categoria_display }}</dd>
                 
                 <dt>Descripci&oacute;n</dt>
                 <dd>{{ oferta.descripcion }}</dd>
 
-                {% if oferta.requisitos_minimos %}
+                {% if oferta.requisitos %}
                     <dt>Requisitos mínimos</dt>
-                    <dd>{{ oferta.requisitos_minimos }}</dd>
+                    <dd>{{ oferta.requisitos }}</dd>
                 {% endif %}
 
                 <dt>Denuncias</dt>
@@ -102,7 +88,7 @@
                 {% if oferta.denuncias.count == 0 %}
                     icon: '{% static "img/marker-green.png" %}'});
                 {% else %}
-                    {% if oferta.denuncias.count > 10 %}
+                    {% if oferta.denuncias.count > 4 %}
                         icon: '{% static "img/marker-red.png" %}'});
                     {% else %}
                         icon: '{% static "img/marker-yellow.png" %}'});
@@ -120,7 +106,7 @@
         function loadScript() {
           var script = document.createElement("script");
           script.type = "text/javascript";
-          script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyAsP-MdTvD43G3NJ12wLTdO8ItDtPLYnrs&sensor=false&callback=initialize";
+          script.src = "http://maps.googleapis.com/maps/api/js?&sensor=false&callback=initialize";
           document.body.appendChild(script);         
         }
         

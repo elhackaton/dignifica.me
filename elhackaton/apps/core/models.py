@@ -72,10 +72,13 @@ class OfertaProvider(models.Model):
 
 class Denuncia(models.Model):
     MOTIVO_CHOICES = (
-        ('Motivo 1', 'Motivo 1'),
+        ('Salario', 'Salario'),
+        ('Horario', 'Horario'),
+        ('Requisitos', 'Requisitos'),
+        ('Otro', 'Otro'),
     )
 
     oferta = models.ForeignKey(Oferta, related_name='denuncias')
     empresa = models.ForeignKey(Empresa, related_name='denuncias')
-    motivo = models.CharField(choices=MOTIVO_CHOICES, max_length=200)
+    motivo = models.CharField(choices=MOTIVO_CHOICES, max_length=200, default="Salario")
     comentario = models.TextField()
