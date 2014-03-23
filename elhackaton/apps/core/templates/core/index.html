@@ -1,0 +1,240 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+	Oferta
+{% endblock title %}
+
+{% block content %}
+	<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-6 column">
+			{% load staticfiles %}
+			<img src="{% static 'css/logo-web.png' %}" />
+		</div>
+		<div class="col-md-6 column">
+			<p class="parrafo-header">
+				Dignifica.me es un proyecto <a href="">opensource</a> para localizar ofertas de trabajo
+				y denunciar	aquellas  que consideres abusivas. ¡Por un trabajo digno!
+			</p>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-12 column divfiltros">
+			<form method="post" class="form-inline" role="form">
+				{% csrf_token %}
+				<div class="form-group">
+					<div class="col-sm-10">
+						<select id="id_ciudad" name="ciudad" class="form-control">
+							<option value="almeria" selected="selected">Ciudad</option>
+							<optgroup label="Asturias">
+							<option value="Asturias">Asturias</option>
+							</optgroup>
+							<optgroup label="Andalucía">
+							<option value="Almería">Almería</option>
+							<option value="Cádiz">Cádiz</option>
+							<option value="Córdoba">Córdoba</option>
+							<option value="Granada" >Granada</option>
+							<option value="Huelva">Huelva</option>
+							<option value="Jaén">Jaén</option>
+							<option value="Málaga">Málaga</option>
+							<option value="Sevilla">Sevilla</option>
+							</optgroup>
+							<optgroup label="Aragón">
+							<option value="Huesca">Huesca</option>
+							<option value="Teruel">Teruel</option>
+							<option value="Zaragoza">Zaragoza</option>
+							</optgroup>
+							<optgroup label="Cantabria">
+							<option value="Cantabria">Cantabria</option>
+							</optgroup>
+							<optgroup label="Castilla y León">
+							<option value="Ávila">Ávila</option>
+							<option value="Burgos">Burgos</option>
+							<option value="León">León</option>
+							<option value="Palencia">Palencia</option>
+							<option value="Salamanca">Salamanca</option>
+							<option value="Segovia">Segovia</option>
+							<option value="Soria">Soria</option>
+							<option value="Valladolid">Valladolid</option>
+							<option value="Zamora">Zamora</option>
+							</optgroup>
+							<optgroup label="Castilla-La Mancha">
+							<option value="Albacete">Albacete</option>
+							<option value="Ciudad Real">Ciudad Real</option>
+							<option value="Cuenca">Cuenca</option>
+							<option value="Guadalajara">Guadalajara</option>
+							<option value="Toledo">Toledo</option>
+							</optgroup>
+							<optgroup label="Cataluña">
+							<option value="Barcelona">Barcelona</option>
+							<option value="Girona">Girona</option>
+							<option value="Lleida">Lleida</option>
+							<option value="Tarragona">Tarragona</option>
+							</optgroup>
+							<optgroup label="Ceuta">
+							<option value="Ceuta">Ceuta</option>
+							</optgroup>
+							<optgroup label="Comunidad Valenciana">
+							<option value="Alicante">Alicante</option>
+							<option value="Castellón">Castellón</option>
+							<option value="Valencia">Valencia</option>
+							</optgroup>
+							<optgroup label="Extremadura">
+							<option value="Badajoz">Badajoz</option>
+							<option value="Cáceres">Cáceres</option>
+							</optgroup>
+							<optgroup label="Galicia">
+							<option value="La Coruña">La Coruña</option>
+							<option value="Lugo">Lugo</option>
+							<option value="Orense">Orense</option>
+							<option value="Pontevedra">Pontevedra</option>
+							</optgroup>
+							<optgroup label="Islas Baleares">
+							<option value="Islas Baleares">Islas Baleares</option>
+							</optgroup>
+							<optgroup label="Islas Canarias">
+							<option value="Las Palmas">Las Palmas</option>
+							<option value="Tenerife">Tenerife</option>
+							</optgroup>
+							<optgroup label="La Rioja">
+							<option value="La Rioja">La Rioja</option>
+							</optgroup>
+							<optgroup label="Madrid">
+							<option value="Madrid">Madrid</option>
+							</optgroup>
+							<optgroup label="Melilla">
+							<option value="Melilla">Melilla</option>
+							</optgroup>
+							<optgroup label="Murcia">
+							<option value="Murcia">Murcia</option>
+							</optgroup>
+							<optgroup label="Navarra">
+							<option value="Navarra">Navarra</option>
+							</optgroup>
+							<optgroup label="País Vasco">
+							<option value="Álava">Álava</option>
+							<option value="Guipúzcoa">Guipúzcoa</option>
+							<option value="Vizcaya">Vizcaya</option>
+							</optgroup>
+						</select>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					 <!--<label for="inputEmail3" class="col-sm-2 control-label">Empresa</label>-->
+					<div class="col-sm-10">
+						{{ form.categoria }}
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						 <button type="submit" class="btn btn-primary btn-large"><i class="glyphicon glyphicon-search"></i> Buscar ofertas</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="row clearfix"></div>
+</div>
+
+
+<!-- MAP -->
+<div id="map_canvas" style="width:100%; height:350px;"></div>
+	
+	
+<div class="container">
+	<div class="row clearfix"></div>
+	<div class="row clearfix">
+		<div class="col-md-12 column tabla-ofertas">
+			{% if ofertas %}
+				<table class="table" id="tabla-ofertas">
+					<thead>
+						<tr class="heading-ofertas">
+							<th>Provincia <a title="Pulsa para ordenar"><i class="glyphicon glyphicon-resize-vertical"></i></a></th>
+							<th>Empresa <a title="Pulsa para ordenar"><i class="glyphicon glyphicon-resize-vertical"></i></a></th>
+							<th>Descripci&oacute;n <a title="Pulsa para ordenar"><i class="glyphicon glyphicon-resize-vertical"></i></a></th>
+							<th>Denuncias <a title="Pulsa para ordenar"><i class="glyphicon glyphicon-resize-vertical"></i></a></th>
+							<th>Ver detalle</th>					
+						</tr>
+					</thead>
+					<tbody>
+						{% for oferta in ofertas %}
+							{% if oferta.denuncias.count == 0 %}
+								<tr class="success">
+							{% else %}
+								{% if oferta.denuncias.count > 10 %}
+									<tr class="danger">
+								{% else %}
+									<tr class="warning">
+								{% endif %}
+							{% endif %}
+								<td>{{ oferta.empresa.ciudad }}</td>
+								<td>{{ oferta.empresa.nombre }}</td>
+								<td>{{ oferta.titulo }}</td>
+								<td>{{ oferta.denuncias.count }}</td>
+								<td><a href="/oferta/{{ oferta.id }}"><button class="btn btn-default btn-info btn-xs"><span class="glyphicon glyphicon-info-sign"></span></button></td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			{% else %}
+				<h1>Ninguna oferta disponible.</h1>
+			{% endif %}
+		</div>
+	</div>
+</div>
+
+{% endblock content %}
+
+{% block js %}
+	{{ block.super }}
+	<script type="text/javascript">
+      function initialize() {
+		  var mapOptions = {
+		    zoom: 5,
+		    scrollwheel: false,
+		    center: new google.maps.LatLng(40.457694, -3.829430),
+		    mapTypeId: google.maps.MapTypeId.ROADMAP
+		  }
+		  var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+
+		  {% for oferta in ofertas %}
+			var marker = new google.maps.Marker({
+				position: new google.maps.LatLng({{ oferta.empresa.lat }}, {{ oferta.empresa.lng }}),
+				map: map,
+				animation: google.maps.Animation.DROP,
+				{% if oferta.denuncias.count == 0 %}
+					icon: '{% static "img/marker-green.png" %}'});
+				{% else %}
+					{% if oferta.denuncias.count > 10 %}
+						icon: '{% static "img/marker-red.png" %}'});
+					{% else %}
+						icon: '{% static "img/marker-yellow.png" %}'});
+					{% endif %}
+				{% endif %}
+
+			google.maps.event.addListener(marker, 'click', function(){
+					var popup = new google.maps.InfoWindow();
+					var note = '<h4>{{ oferta.titulo }}</h4><p><strong>Empresa:</strong> {{ oferta.empresa.nombre }}</p><p><strong>Denuncias: </strong>{{ oferta.denuncias.count }}</p>';
+					popup.setContent(note);
+					popup.open(map, marker);
+				})
+		  {% endfor %}
+		}
+		
+		function loadScript() {
+		  var script = document.createElement("script");
+		  script.type = "text/javascript";
+		  script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyAsP-MdTvD43G3NJ12wLTdO8ItDtPLYnrs&sensor=false&callback=initialize";
+		  document.body.appendChild(script);
+		  
+		  $("#tabla-ofertas").tablesorter();
+		  $("#id_categoria").addClass('form-control')
+		}
+
+		
+		window.onload = loadScript;
+    </script>
+{% endblock js %}

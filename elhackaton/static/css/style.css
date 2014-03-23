@@ -1,0 +1,71 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+#footer {
+   background-color: #333333;
+   color: #cccccc;
+   bottom: 0;
+   height: 100px;
+   position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.parrafo-header {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	padding: 1em;
+	margin-top: 2em;
+	font-size: 16px;
+}
+
+.divfiltros {
+	padding: 2em;
+	text-align: center;
+}
+
+.form-control {
+	padding: 6px 6px;
+}
+
+.form-inline .form-group {
+	margin: 0px -15px;		
+}
+
+.tabla-ofertas {
+	padding: 2em;
+}
+
+.table>thead>tr>th, .table>tbody>tr>td {
+	text-align: center;
+}
+
+
+#footer p {
+	display: inline-block;
+	margin-top: 2em;
+	padding: 0 1em;
+}
+
+.img-hackaton-footer {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+}
+
+.map-oferta {
+	padding-top: 4em;
+}
+
+.clear6em {
+	padding-bottom: 6em;
+}
+
+.env-denuncia {
+	padding-top: 1em;
+}
+

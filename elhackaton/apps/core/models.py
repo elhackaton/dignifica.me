@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from geopy.geocoders import GoogleV3
 
 from django.db import models
@@ -9,19 +10,40 @@ class Empresa(models.Model):
     ciudad = models.CharField(max_length=50, blank=True)
     lat = models.FloatField(null=True, blank=True)
     lng = models.FloatField(null=True, blank=True)
+    codigo_postal = models.CharField(blank=True, max_length=50)
+    ciudad = models.CharField(max_length=50)
 
     def __unicode__(self):
         return self.nombre
 
-    def set_coordinates(self, codigo_postal, ciudad):
-        self.lat, self.lng = GoogleV3().geocode('%s, %s' % (codigo_postal, ciudad))[1]
+    def set_coordinates(self):
+        self.lat, self.lng = GoogleV3().geocode('%s, %s' % (self.codigo_postal,
+            self.ciudad))[1]
         self.save()
 
 
 class Oferta(models.Model):
     CATEGORIA_CHOICES = (
-        ('Administracion Publica', 'Administracion Publica'),
-        ('Atencion a clientes', 'Atencion a clientes'),
+        ('admon', 'Administracion Publica'),
+        ('admon_empresas', 'Administracion de empresas'),
+        ('atencion_clientes', 'Atencion a clientes'),
+        ('idi', 'Calidad, produccion e I+D'),
+        ('comercial', 'Comercial y ventas'),
+        ('logistica', 'Logística y Almacén'),
+        ('arte', 'Diseño y artes gráficas'),
+        ('educacion', 'Educación y formación'),
+        ('finanzas', 'Finanzas y banca'),
+        ('informatica', 'Informática y telecomunicaciones'),
+        ('ingenieria', 'Ingenieros y técnicos'),
+        ('construccion', 'Inmobiliario y construcción'),
+        ('legal', 'Legal'),
+        ('marketing', 'Marketing y comunicación'),
+        ('profesionales', 'Profesiones, artes y oficios'),
+        ('recursos_humanos', 'Recursos humanos'),
+        ('sanidad', 'Sanidad y salud'),
+        ('turismo', 'Turismo y restauración'),
+        ('ventas', 'Ventas al detalle'),
+        ('otros', 'Otros'),
     )
 
     empresa = models.ForeignKey(Empresa, related_name='ofertas')
@@ -49,11 +71,11 @@ class OfertaProvider(models.Model):
 
 
 class Denuncia(models.Model):
-    MOTIVOS_CHOICES = (
+    MOTIVO_CHOICES = (
         ('Motivo 1', 'Motivo 1'),
     )
 
     oferta = models.ForeignKey(Oferta, related_name='denuncias')
     empresa = models.ForeignKey(Empresa, related_name='denuncias')
-    motivos = models.CharField(choices=MOTIVOS_CHOICES, max_length=200)
-    comentario = models.TextField(blank=True)
+    motivo = models.CharField(choices=MOTIVO_CHOICES, max_length=200)
+    comentario = models.TextField()

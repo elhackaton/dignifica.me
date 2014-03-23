@@ -81,7 +81,7 @@ class DenunciaViewSet(viewsets.ModelViewSet):
         denuncia = Denuncia()
         denuncia.oferta = oferta
         denuncia.empresa = oferta.empresa
-        denuncia.motivos = request.DATA.get('motivos')
+        denuncia.motivo = request.DATA.get('motivo')
         denuncia.comentario = request.DATA.get('comentario') if request.DATA.get('comentario') else ''
         denuncia.save()
         return HttpResponse()

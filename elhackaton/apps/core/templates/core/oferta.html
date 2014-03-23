@@ -1,0 +1,129 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+    {{ oferta.title }}
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+    <div class="row clearfix">
+        <div class="col-md-6 column">
+            {% load staticfiles %}
+            <a href="/" title="Inicio"><img src="{% static 'css/logo-web.png' %}" /></a>
+        </div>
+        <div class="col-md-6 column">
+            <p class="parrafo-header">
+                Dignifica.me es un proyecto <a href="">opensource</a> para localizar ofertas de trabajo
+                y denunciar aquellas  que consideres abusivas. ¡Por un trabajo digno!
+            </p>
+        </div>
+    </div>
+    <div class="row clearfix">
+
+    </div>
+    <div class="row clearfix">      
+        <div class="col-md-6 column">
+            <h3>{{ oferta.titulo }}</h3>
+            <dl>
+                <dt>Ciudad</dt>
+                <dd>{{ oferta.empresa.ciudad }}</dd>
+                
+                <dt>Categor&iacute;a</dt>
+                <dd>{{ oferta.categoria }}</dd>
+                
+                <dt>Descripci&oacute;n</dt>
+                <dd>{{ oferta.descripcion }}</dd>
+
+                {% if oferta.requisitos_minimos %}
+                    <dt>Requisitos mínimos</dt>
+                    <dd>{{ oferta.requisitos_minimos }}</dd>
+                {% endif %}
+
+                <dt>Denuncias</dt>
+                <dd>{{ oferta.denuncias.count }}</dd>
+                <br>
+
+                <a class="btn btn-default btn-block" href="{{ oferta.url }}">Más información de la oferta</a>
+<a id="modal-742046" class="btn btn-danger btn-block" href="#modal-container-742046" data-toggle="modal">Denunciar oferta</a>
+        </div>
+        <div class="col-md-6 column map-oferta">
+            <div id="map_canvas" style="width:100%; height:350px;"></div>
+        </div>
+    </div>
+    <div class="row clearfix clear6em">
+
+    </div>
+</div>
+
+<div class="modal fade" id="modal-container-742046" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            Denunciar oferta
+                        </h4>
+                    </div>
+                    <form method="post" class="form" role="form">  
+                    <div class="modal-body">
+                        <p>Cu&eacute;ntanos el motivo por el que crees que esta oferta es abusiva o denunciable:</p>
+                               
+                        {% csrf_token %}
+                        {% load bootstrap3 %}
+                        {% bootstrap_form form %}                      
+                    </div>
+                <div class="row clearfix">  </div>
+                <div class="modal-footer">
+                         <button type="submit" class="btn btn-danger btn-large"><i class="glyphicon glyphicon-floppy-disk"></i> Enviar Denuncia</button>
+                </div>
+                </form>
+                </div>
+                
+            </div>
+</div>
+{% endblock content %}
+
+{% block js %}
+    {{ block.super }}
+    <script type="text/javascript">
+      function initialize() {
+          var mapOptions = {
+            zoom: 9,
+            scrollwheel: false,
+            center: new google.maps.LatLng({{ oferta.empresa.lat }}, {{ oferta.empresa.lng }}),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+          }
+          var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+
+          var marker = new google.maps.Marker({
+                position: new google.maps.LatLng({{ oferta.empresa.lat }}, {{ oferta.empresa.lng }}),
+                map: map,
+                animation: google.maps.Animation.DROP,
+                {% if oferta.denuncias.count == 0 %}
+                    icon: '{% static "img/marker-green.png" %}'});
+                {% else %}
+                    {% if oferta.denuncias.count > 10 %}
+                        icon: '{% static "img/marker-red.png" %}'});
+                    {% else %}
+                        icon: '{% static "img/marker-yellow.png" %}'});
+                    {% endif %}
+                {% endif %}
+
+            google.maps.event.addListener(marker, 'click', function(){
+                    var popup = new google.maps.InfoWindow();
+                    var note = '<h4>{{ oferta.titulo }}</h4><p><strong>Empresa:</strong> {{ oferta.empresa.nombre }}</p><p><strong>Denuncias: </strong>{{ oferta.denuncias.count }}</p>';
+                    popup.setContent(note);
+                    popup.open(map, marker);
+                })
+        }
+        
+        function loadScript() {
+          var script = document.createElement("script");
+          script.type = "text/javascript";
+          script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyAsP-MdTvD43G3NJ12wLTdO8ItDtPLYnrs&sensor=false&callback=initialize";
+          document.body.appendChild(script);         
+        }
+        
+        window.onload = loadScript;
+    </script>
+{% endblock js %}
