@@ -1,0 +1,555 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05542B7518DDEC18005632E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05542B7418DDEC18005632E0 /* Foundation.framework */; };
+		05542B7718DDEC18005632E0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05542B7618DDEC18005632E0 /* CoreGraphics.framework */; };
+		05542B7918DDEC18005632E0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05542B7818DDEC18005632E0 /* UIKit.framework */; };
+		05542B7F18DDEC18005632E0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 05542B7D18DDEC18005632E0 /* InfoPlist.strings */; };
+		05542B8118DDEC18005632E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05542B8018DDEC18005632E0 /* main.m */; };
+		05542B8518DDEC18005632E0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05542B8418DDEC18005632E0 /* AppDelegate.m */; };
+		05542B8818DDEC18005632E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05542B8618DDEC18005632E0 /* Main.storyboard */; };
+		05542B8B18DDEC18005632E0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05542B8A18DDEC18005632E0 /* ViewController.m */; };
+		05542B8D18DDEC18005632E0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05542B8C18DDEC18005632E0 /* Images.xcassets */; };
+		05542B9418DDEC18005632E0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05542B9318DDEC18005632E0 /* XCTest.framework */; };
+		05542B9518DDEC18005632E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05542B7418DDEC18005632E0 /* Foundation.framework */; };
+		05542B9618DDEC18005632E0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05542B7818DDEC18005632E0 /* UIKit.framework */; };
+		05542B9E18DDEC18005632E0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 05542B9C18DDEC18005632E0 /* InfoPlist.strings */; };
+		05542BA018DDEC18005632E0 /* DignificameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05542B9F18DDEC18005632E0 /* DignificameTests.m */; };
+		05542BAC18DDECA0005632E0 /* dignificame-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 05542BAB18DDECA0005632E0 /* dignificame-logo.png */; };
+		05542BB018DDFC63005632E0 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05542BAF18DDFC63005632E0 /* TableViewController.m */; };
+		05542BB218DE0721005632E0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05542BB118DE0721005632E0 /* MapKit.framework */; };
+		05542BB618DE6B3B005632E0 /* Oferta.m in Sources */ = {isa = PBXBuildFile; fileRef = 05542BB518DE6B3B005632E0 /* Oferta.m */; };
+		05542BB918DE8271005632E0 /* Empresa.m in Sources */ = {isa = PBXBuildFile; fileRef = 05542BB818DE8271005632E0 /* Empresa.m */; };
+		05542BBC18DE8280005632E0 /* Denuncia.m in Sources */ = {isa = PBXBuildFile; fileRef = 05542BBB18DE8280005632E0 /* Denuncia.m */; };
+		05542BBF18DE9946005632E0 /* OfertaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05542BBE18DE9946005632E0 /* OfertaViewController.m */; };
+		05542BC118DEB002005632E0 /* icono-movil.png in Resources */ = {isa = PBXBuildFile; fileRef = 05542BC018DEB002005632E0 /* icono-movil.png */; };
+		05542BC718DEB1EB005632E0 /* MapaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05542BC618DEB1EB005632E0 /* MapaViewController.m */; };
+		05542BC918DEB613005632E0 /* thumbs_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 05542BC818DEB613005632E0 /* thumbs_down.png */; };
+		05542BCB18DEB6C0005632E0 /* thumbs_down_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 05542BCA18DEB6C0005632E0 /* thumbs_down_2.png */; };
+		05542BCD18DEB79F005632E0 /* dignificame_logo_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 05542BCC18DEB79F005632E0 /* dignificame_logo_2.png */; };
+		05542BD218DEC0C7005632E0 /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 05542BD118DEC0C7005632E0 /* CustomAnnotation.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		05542B9718DDEC18005632E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05542B6918DDEC17005632E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05542B7018DDEC18005632E0;
+			remoteInfo = Dignificame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05542B7118DDEC18005632E0 /* Dignificame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dignificame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05542B7418DDEC18005632E0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		05542B7618DDEC18005632E0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		05542B7818DDEC18005632E0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		05542B7C18DDEC18005632E0 /* Dignificame-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dignificame-Info.plist"; sourceTree = "<group>"; };
+		05542B7E18DDEC18005632E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		05542B8018DDEC18005632E0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		05542B8218DDEC18005632E0 /* Dignificame-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dignificame-Prefix.pch"; sourceTree = "<group>"; };
+		05542B8318DDEC18005632E0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		05542B8418DDEC18005632E0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		05542B8718DDEC18005632E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		05542B8918DDEC18005632E0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		05542B8A18DDEC18005632E0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		05542B8C18DDEC18005632E0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		05542B9218DDEC18005632E0 /* DignificameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DignificameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		05542B9318DDEC18005632E0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		05542B9B18DDEC18005632E0 /* DignificameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DignificameTests-Info.plist"; sourceTree = "<group>"; };
+		05542B9D18DDEC18005632E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		05542B9F18DDEC18005632E0 /* DignificameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DignificameTests.m; sourceTree = "<group>"; };
+		05542BAB18DDECA0005632E0 /* dignificame-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dignificame-logo.png"; sourceTree = "<group>"; };
+		05542BAE18DDFC63005632E0 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		05542BAF18DDFC63005632E0 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		05542BB118DE0721005632E0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		05542BB418DE6B3B005632E0 /* Oferta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Oferta.h; sourceTree = "<group>"; };
+		05542BB518DE6B3B005632E0 /* Oferta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Oferta.m; sourceTree = "<group>"; };
+		05542BB718DE8271005632E0 /* Empresa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Empresa.h; sourceTree = "<group>"; };
+		05542BB818DE8271005632E0 /* Empresa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Empresa.m; sourceTree = "<group>"; };
+		05542BBA18DE8280005632E0 /* Denuncia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Denuncia.h; sourceTree = "<group>"; };
+		05542BBB18DE8280005632E0 /* Denuncia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Denuncia.m; sourceTree = "<group>"; };
+		05542BBD18DE9946005632E0 /* OfertaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfertaViewController.h; sourceTree = "<group>"; };
+		05542BBE18DE9946005632E0 /* OfertaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfertaViewController.m; sourceTree = "<group>"; };
+		05542BC018DEB002005632E0 /* icono-movil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icono-movil.png"; path = "../../Downloads/icono-movil.png"; sourceTree = "<group>"; };
+		05542BC518DEB1EB005632E0 /* MapaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapaViewController.h; sourceTree = "<group>"; };
+		05542BC618DEB1EB005632E0 /* MapaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapaViewController.m; sourceTree = "<group>"; };
+		05542BC818DEB613005632E0 /* thumbs_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thumbs_down.png; path = ../../Downloads/thumbs_down.png; sourceTree = "<group>"; };
+		05542BCA18DEB6C0005632E0 /* thumbs_down_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thumbs_down_2.png; path = ../../Downloads/thumbs_down_2.png; sourceTree = "<group>"; };
+		05542BCC18DEB79F005632E0 /* dignificame_logo_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dignificame_logo_2.png; path = ../../Downloads/dignificame_logo_2.png; sourceTree = "<group>"; };
+		05542BD018DEC0C7005632E0 /* CustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotation.h; sourceTree = "<group>"; };
+		05542BD118DEC0C7005632E0 /* CustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotation.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		05542B6E18DDEC18005632E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05542BB218DE0721005632E0 /* MapKit.framework in Frameworks */,
+				05542B7718DDEC18005632E0 /* CoreGraphics.framework in Frameworks */,
+				05542B7918DDEC18005632E0 /* UIKit.framework in Frameworks */,
+				05542B7518DDEC18005632E0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05542B8F18DDEC18005632E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05542B9418DDEC18005632E0 /* XCTest.framework in Frameworks */,
+				05542B9618DDEC18005632E0 /* UIKit.framework in Frameworks */,
+				05542B9518DDEC18005632E0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05542B6818DDEC17005632E0 = {
+			isa = PBXGroup;
+			children = (
+				05542B7A18DDEC18005632E0 /* Dignificame */,
+				05542B7318DDEC18005632E0 /* Frameworks */,
+				05542B7218DDEC18005632E0 /* Products */,
+				05542BAA18DDEC8E005632E0 /* Recursos */,
+			);
+			sourceTree = "<group>";
+		};
+		05542B7218DDEC18005632E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				05542B7118DDEC18005632E0 /* Dignificame.app */,
+				05542B9218DDEC18005632E0 /* DignificameTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		05542B7318DDEC18005632E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05542BB118DE0721005632E0 /* MapKit.framework */,
+				05542B7418DDEC18005632E0 /* Foundation.framework */,
+				05542B7618DDEC18005632E0 /* CoreGraphics.framework */,
+				05542B7818DDEC18005632E0 /* UIKit.framework */,
+				05542B9318DDEC18005632E0 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		05542B7A18DDEC18005632E0 /* Dignificame */ = {
+			isa = PBXGroup;
+			children = (
+				05542BB318DE6AE1005632E0 /* Models */,
+				05542B8318DDEC18005632E0 /* AppDelegate.h */,
+				05542B8418DDEC18005632E0 /* AppDelegate.m */,
+				05542B8618DDEC18005632E0 /* Main.storyboard */,
+				05542B8918DDEC18005632E0 /* ViewController.h */,
+				05542B8A18DDEC18005632E0 /* ViewController.m */,
+				05542BAE18DDFC63005632E0 /* TableViewController.h */,
+				05542BAF18DDFC63005632E0 /* TableViewController.m */,
+				05542BBD18DE9946005632E0 /* OfertaViewController.h */,
+				05542BBE18DE9946005632E0 /* OfertaViewController.m */,
+				05542BD018DEC0C7005632E0 /* CustomAnnotation.h */,
+				05542BD118DEC0C7005632E0 /* CustomAnnotation.m */,
+				05542BC518DEB1EB005632E0 /* MapaViewController.h */,
+				05542BC618DEB1EB005632E0 /* MapaViewController.m */,
+				05542B9918DDEC18005632E0 /* DignificameTests */,
+				05542B8C18DDEC18005632E0 /* Images.xcassets */,
+				05542B7B18DDEC18005632E0 /* Supporting Files */,
+			);
+			path = Dignificame;
+			sourceTree = "<group>";
+		};
+		05542B7B18DDEC18005632E0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				05542B7C18DDEC18005632E0 /* Dignificame-Info.plist */,
+				05542B7D18DDEC18005632E0 /* InfoPlist.strings */,
+				05542B8018DDEC18005632E0 /* main.m */,
+				05542B8218DDEC18005632E0 /* Dignificame-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		05542B9918DDEC18005632E0 /* DignificameTests */ = {
+			isa = PBXGroup;
+			children = (
+				05542B9F18DDEC18005632E0 /* DignificameTests.m */,
+				05542B9A18DDEC18005632E0 /* Supporting Files */,
+			);
+			path = DignificameTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		05542B9A18DDEC18005632E0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				05542B9B18DDEC18005632E0 /* DignificameTests-Info.plist */,
+				05542B9C18DDEC18005632E0 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		05542BAA18DDEC8E005632E0 /* Recursos */ = {
+			isa = PBXGroup;
+			children = (
+				05542BCA18DEB6C0005632E0 /* thumbs_down_2.png */,
+				05542BC818DEB613005632E0 /* thumbs_down.png */,
+				05542BC018DEB002005632E0 /* icono-movil.png */,
+				05542BAB18DDECA0005632E0 /* dignificame-logo.png */,
+				05542BCC18DEB79F005632E0 /* dignificame_logo_2.png */,
+			);
+			name = Recursos;
+			sourceTree = "<group>";
+		};
+		05542BB318DE6AE1005632E0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				05542BB418DE6B3B005632E0 /* Oferta.h */,
+				05542BB518DE6B3B005632E0 /* Oferta.m */,
+				05542BB718DE8271005632E0 /* Empresa.h */,
+				05542BB818DE8271005632E0 /* Empresa.m */,
+				05542BBA18DE8280005632E0 /* Denuncia.h */,
+				05542BBB18DE8280005632E0 /* Denuncia.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		05542B7018DDEC18005632E0 /* Dignificame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05542BA318DDEC18005632E0 /* Build configuration list for PBXNativeTarget "Dignificame" */;
+			buildPhases = (
+				05542B6D18DDEC18005632E0 /* Sources */,
+				05542B6E18DDEC18005632E0 /* Frameworks */,
+				05542B6F18DDEC18005632E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dignificame;
+			productName = Dignificame;
+			productReference = 05542B7118DDEC18005632E0 /* Dignificame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		05542B9118DDEC18005632E0 /* DignificameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05542BA618DDEC18005632E0 /* Build configuration list for PBXNativeTarget "DignificameTests" */;
+			buildPhases = (
+				05542B8E18DDEC18005632E0 /* Sources */,
+				05542B8F18DDEC18005632E0 /* Frameworks */,
+				05542B9018DDEC18005632E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05542B9818DDEC18005632E0 /* PBXTargetDependency */,
+			);
+			name = DignificameTests;
+			productName = DignificameTests;
+			productReference = 05542B9218DDEC18005632E0 /* DignificameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		05542B6918DDEC17005632E0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Rafa Prats";
+				TargetAttributes = {
+					05542B9118DDEC18005632E0 = {
+						TestTargetID = 05542B7018DDEC18005632E0;
+					};
+				};
+			};
+			buildConfigurationList = 05542B6C18DDEC17005632E0 /* Build configuration list for PBXProject "Dignificame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 05542B6818DDEC17005632E0;
+			productRefGroup = 05542B7218DDEC18005632E0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				05542B7018DDEC18005632E0 /* Dignificame */,
+				05542B9118DDEC18005632E0 /* DignificameTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		05542B6F18DDEC18005632E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05542B8D18DDEC18005632E0 /* Images.xcassets in Resources */,
+				05542BC118DEB002005632E0 /* icono-movil.png in Resources */,
+				05542BCD18DEB79F005632E0 /* dignificame_logo_2.png in Resources */,
+				05542BC918DEB613005632E0 /* thumbs_down.png in Resources */,
+				05542BAC18DDECA0005632E0 /* dignificame-logo.png in Resources */,
+				05542B7F18DDEC18005632E0 /* InfoPlist.strings in Resources */,
+				05542BCB18DEB6C0005632E0 /* thumbs_down_2.png in Resources */,
+				05542B8818DDEC18005632E0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05542B9018DDEC18005632E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05542B9E18DDEC18005632E0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05542B6D18DDEC18005632E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05542B8B18DDEC18005632E0 /* ViewController.m in Sources */,
+				05542BBF18DE9946005632E0 /* OfertaViewController.m in Sources */,
+				05542BC718DEB1EB005632E0 /* MapaViewController.m in Sources */,
+				05542B8518DDEC18005632E0 /* AppDelegate.m in Sources */,
+				05542B8118DDEC18005632E0 /* main.m in Sources */,
+				05542BD218DEC0C7005632E0 /* CustomAnnotation.m in Sources */,
+				05542BB918DE8271005632E0 /* Empresa.m in Sources */,
+				05542BB618DE6B3B005632E0 /* Oferta.m in Sources */,
+				05542BBC18DE8280005632E0 /* Denuncia.m in Sources */,
+				05542BB018DDFC63005632E0 /* TableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05542B8E18DDEC18005632E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05542BA018DDEC18005632E0 /* DignificameTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		05542B9818DDEC18005632E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05542B7018DDEC18005632E0 /* Dignificame */;
+			targetProxy = 05542B9718DDEC18005632E0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		05542B7D18DDEC18005632E0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05542B7E18DDEC18005632E0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		05542B8618DDEC18005632E0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05542B8718DDEC18005632E0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		05542B9C18DDEC18005632E0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05542B9D18DDEC18005632E0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		05542BA118DDEC18005632E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		05542BA218DDEC18005632E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		05542BA418DDEC18005632E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dignificame/Dignificame-Prefix.pch";
+				INFOPLIST_FILE = "Dignificame/Dignificame-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		05542BA518DDEC18005632E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dignificame/Dignificame-Prefix.pch";
+				INFOPLIST_FILE = "Dignificame/Dignificame-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		05542BA718DDEC18005632E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Dignificame.app/Dignificame";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dignificame/Dignificame-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DignificameTests/DignificameTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		05542BA818DDEC18005632E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Dignificame.app/Dignificame";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dignificame/Dignificame-Prefix.pch";
+				INFOPLIST_FILE = "DignificameTests/DignificameTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05542B6C18DDEC17005632E0 /* Build configuration list for PBXProject "Dignificame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05542BA118DDEC18005632E0 /* Debug */,
+				05542BA218DDEC18005632E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05542BA318DDEC18005632E0 /* Build configuration list for PBXNativeTarget "Dignificame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05542BA418DDEC18005632E0 /* Debug */,
+				05542BA518DDEC18005632E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05542BA618DDEC18005632E0 /* Build configuration list for PBXNativeTarget "DignificameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05542BA718DDEC18005632E0 /* Debug */,
+				05542BA818DDEC18005632E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 05542B6918DDEC17005632E0 /* Project object */;
+}
