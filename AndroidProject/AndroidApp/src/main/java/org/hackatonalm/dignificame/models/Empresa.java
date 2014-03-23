@@ -3,16 +3,56 @@ package org.hackatonalm.dignificame.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import org.hackatonalm.dignificame.DataStorage;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Arasthel on 22/03/14.
  */
-public class Empresa implements Parcelable {
+public class Empresa {
 
     private String nombre;
     private double latitud;
     private double longitud;
     private String descripcion;
     private String ciudad;
+    private List<Denuncia> denuncias = new ArrayList<Denuncia>();
+
+    public Empresa(String nombre, double latitud, double longitud, String descripcion, String ciudad) {
+        this.nombre = nombre;
+        this.latitud = latitud;
+        this.longitud = longitud;
+        this.descripcion = descripcion;
+        this.ciudad = ciudad;
+    }
+
+    public static Empresa empresaFromJSON(JSONObject json) {
+        Empresa empresa = null;
+
+        try {
+            String nombre = json.getString("nombre");
+            if(DataStorage.ofertasMap.containsKey(nombre)) {
+                empresa = DataStorage.ofertasMap.get(nombre);
+            } else {
+                empresa = new Empresa(nombre,
+                        json.optDouble("lat"),
+                        json.optDouble("lng"),
+                        json.getString("descripcion"),
+                        json.getString("ciudad"));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return empresa;
+    }
+
+    public void addDenuncia(Denuncia denuncia) {
+        denuncias.add(denuncia);
+    }
 
     public String getNombre() {
         return nombre;
@@ -54,13 +94,4 @@ public class Empresa implements Parcelable {
         this.ciudad = ciudad;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-
-    }
 }

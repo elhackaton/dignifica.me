@@ -17,14 +17,12 @@
             android:orientation="vertical">
 
             <TextView android:id="@+id/titulo_oferta"
-                android:text="@string/hello_world"
                 android:textSize="26sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="6dp"/>
 
             <TextView android:id="@+id/nombre_empresa"
-                android:text="@string/hello_world"
                 android:textSize="20sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,15 +45,6 @@
             <TextView android:id="@+id/descripcion_oferta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Primark busca Responsable de departamento para nuestras tiendas del Norte de España.
-    Las tareas a realizar serán las siguientes:
-    *Impulsar y controlar las ventas en su departamento garantizando el cumplimiento de todos los objetivos.
-    *Gestión de stock- Gestionar el stock para minimizar el coste.
-    *Contratar, dirigir y motivar al equipo para lograr los estándares de la empresa.
-    *Merchandising- Proporcionar excelentes estándares visuales.
-    *Estándares Operacionales- Cumplimiento de las expectativas y política de la empresa.
-    *Atención al cliente- Dirigir el equipo para prestar un servicio de atención al cliente excelente.
-    *Seguridad, Salud y Medio Ambiente- Garantizar el cumplimiento de los estándares de seguridad y salud."
                 android:layout_marginBottom="10dp"/>
 
             <TextView
@@ -64,19 +53,13 @@
                 android:text="Requisitos mínimos:"
                 android:textStyle="bold"
                 android:textAllCaps="true"
-                android:textSize="10sp"
+                android:textSize="14sp"
                 android:layout_marginBottom="6dp"/>
 
             <TextView android:id="@+id/requisitos_oferta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:text="Estudios mínimos:	 Diplomado
-    Experiencia mínima:	Al menos 2 años
-    Requisitos mínimos:	Experiencia en distribución
-    Alta Orientación al cliente
-    Orientación a resultados
-    Conocimiento Textil."/>
+                android:layout_marginBottom="10dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -84,13 +67,12 @@
                 android:text="Sueldo:"
                 android:textStyle="bold"
                 android:textAllCaps="true"
-                android:textSize="10sp"
+                android:textSize="14sp"
                 android:layout_marginBottom="6dp"/>
 
             <TextView android:id="@+id/sueldo_oferta"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="15.000 € - 42.000 € Bruto/año"/>
+                android:layout_height="wrap_content"/>
         </LinearLayout>
 
     </LinearLayout>

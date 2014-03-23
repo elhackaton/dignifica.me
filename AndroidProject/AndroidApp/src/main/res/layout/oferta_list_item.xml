@@ -19,5 +19,7 @@
         android:layout_below="@+id/titulo_oferta"
         android:textColor="@android:color/secondary_text_light"
         android:layout_marginTop="8dp"
+        android:singleLine="true"
+        android:ellipsize="end"
         android:text="Empresa"/>
 </RelativeLayout>

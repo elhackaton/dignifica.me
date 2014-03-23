@@ -3,19 +3,47 @@ package org.hackatonalm.dignificame;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.koushikdutta.async.future.FutureCallback;
+import com.koushikdutta.ion.Ion;
 import com.viewpagerindicator.PageIndicator;
 import com.viewpagerindicator.TabPageIndicator;
 
 import org.hackatonalm.dignificame.adapters.ViewPagerAdapter;
+import org.hackatonalm.dignificame.models.Oferta;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ListadoBusqueda extends ActionBarActivity {
 
     private ViewPager viewPager;
     private PageIndicator pagerIndicator;
+    private OnOfertasLoadedListener listadoListener;
+    private OnOfertasLoadedListener mapaListener;
+
+    private List<Oferta> ofertas;
+
+    public void setListadoListener(OnOfertasLoadedListener listadoListener) {
+        this.listadoListener = listadoListener;
+        if(ofertas != null) {
+            listadoListener.onOfertasLoaded(ofertas);
+        }
+    }
+
+    public void setMapaListener(OnOfertasLoadedListener mapaListener) {
+        this.mapaListener = mapaListener;
+        if(mapaListener != null) {
+            mapaListener.onOfertasLoaded(ofertas);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,27 +54,53 @@ public class ListadoBusqueda extends ActionBarActivity {
         viewPager.setAdapter(adapter);
         pagerIndicator = (TabPageIndicator) findViewById(R.id.pager_indicator);
         pagerIndicator.setViewPager(viewPager);
-    }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.listado_busqueda, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        String url = "http://192.168.1.68:9000/api/ofertas/?format=json";
+        if(getIntent().getExtras() != null) {
+            if (getIntent().getExtras().containsKey("terminos")) {
+                url += "&categoria="+getIntent().getExtras().getString("terminos");
+            }
+            if (getIntent().getExtras().containsKey("lugar")) {
+                url += "&ciudad="+getIntent().getExtras().getString("lugar");
+            }
         }
-        return super.onOptionsItemSelected(item);
+
+        if(BuildConfig.DEBUG) {
+            Log.d("org.hackatonalm.dignificame.ListadoBusqueda", "onCreate (line 66): "+url);
+        }
+
+        Ion.with(this).
+                load(url).
+                asString()
+                .setCallback(new FutureCallback<String>() {
+                    @Override
+                    public void onCompleted(Exception e, String result) {
+                        if(result != null) {
+                            try {
+                                ofertas = new ArrayList<Oferta>();
+                                JSONArray objects = new JSONArray(result);
+                                for(int i = 0; i < objects.length(); i++) {
+                                    JSONObject ofertaJSON = objects.getJSONObject(i);
+                                    ofertas.add(Oferta.ofertaFromJSON(ofertaJSON));
+                                }
+                                if(listadoListener != null) {
+                                    listadoListener.onOfertasLoaded(ofertas);
+                                }
+                                if(mapaListener != null) {
+                                    mapaListener.onOfertasLoaded(ofertas);
+                                }
+
+                            } catch (JSONException e1) {
+                                e1.printStackTrace();
+                            }
+                        }
+                    }
+                });
+    }
+
+
+    public interface OnOfertasLoadedListener {
+        public void onOfertasLoaded(List<Oferta> ofertas);
     }
 
 }

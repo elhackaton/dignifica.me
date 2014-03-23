@@ -15,6 +15,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#ddd"
+        android:padding="10dp"
+        android:clipToPadding="false"
+        android:scrollbarStyle="outsideOverlay"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="6dp"
         android:layout_below="@id/lista_denuncias_titulo"
         android:layout_above="@+id/lista_denuncias_accion"></ListView>
 
