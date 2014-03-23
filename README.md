@@ -15,7 +15,7 @@ Dignifica.me no es sólo un buscador para encontrar el trabajo que más te convi
 
 Estado del desarrollo actual
 ----------------------------
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Las funcionalidades más básicas del portal y las aplicaciones, como son la búsqueda de ofertas, el filtrado y el añadido de denuncias funcionan. Falta incorporar algunas apis (providers) de portales de empleo, corregir fallos menores y depurar la app de iPhone.
 
 Especificaciones Técnicas
 --------------------------
