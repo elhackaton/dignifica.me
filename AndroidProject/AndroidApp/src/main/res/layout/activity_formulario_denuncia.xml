@@ -18,13 +18,14 @@
             android:layout_height="wrap_content"
             android:textAllCaps="true"
             android:textStyle="bold"
-            android:textSize="12sp"
+            android:textSize="14sp"
             android:text="Motivo de la denuncia:"
             android:layout_marginBottom="10dp"/>
 
         <Spinner android:id="@+id/spinner_motivo_denuncia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:entries="@array/motivos_denuncia"
             android:layout_marginBottom="14dp"></Spinner>
 
         <TextView
@@ -32,19 +33,22 @@
             android:layout_height="wrap_content"
             android:textAllCaps="true"
             android:textStyle="bold"
-            android:textSize="12sp"
+            android:textSize="14sp"
             android:text="¿Por qué merecen ser denunciados?"
             android:layout_marginBottom="10dp"/>
 
-        <EditText
+        <EditText android:id="@+id/comentarios_denuncia"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:inputType="textAutoCorrect"
+            android:gravity="top"/>
 
     </LinearLayout>
 
     <Button android:id="@+id/denunciar_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Denunciar oferta"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"/>
 

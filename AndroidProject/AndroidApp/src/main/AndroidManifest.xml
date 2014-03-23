@@ -32,15 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="org.hackatonalm.dignificame.Presentacion"
-            android:label="@string/title_activity_presentacion" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name="org.hackatonalm.dignificame.ListadoBusqueda"
             android:label="@string/title_activity_listado_busqueda" >

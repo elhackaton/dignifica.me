@@ -10,18 +10,28 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.koushikdutta.async.future.FutureCallback;
+import com.koushikdutta.ion.Ion;
+
+import org.hackatonalm.dignificame.DataStorage;
 import org.hackatonalm.dignificame.DetalleOferta;
+import org.hackatonalm.dignificame.ListadoBusqueda;
 import org.hackatonalm.dignificame.R;
 import org.hackatonalm.dignificame.adapters.OfertasListaAdapter;
 import org.hackatonalm.dignificame.models.Empresa;
 import org.hackatonalm.dignificame.models.Oferta;
+import org.hackatonalm.dignificame.ListadoBusqueda.OnOfertasLoadedListener;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Arasthel on 22/03/14.
  */
-public class ListadoBusquedaFragment extends Fragment implements AdapterView.OnItemClickListener {
+public class ListadoBusquedaFragment extends Fragment implements AdapterView.OnItemClickListener, OnOfertasLoadedListener {
 
     private ListView lista;
     private Context context;
@@ -37,22 +47,24 @@ public class ListadoBusquedaFragment extends Fragment implements AdapterView.OnI
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Oferta oferta = new Oferta();
-        oferta.setTitulo("Oferta de desarrollador Android");
-        Empresa empresa = new Empresa();
-        empresa.setNombre("Surbus (ALSA)");
-        oferta.setEmpresa(empresa);
-        ArrayList<Oferta> ofertas = new ArrayList<Oferta>();
-        ofertas.add(oferta);
-        OfertasListaAdapter adapter = new OfertasListaAdapter(context, -1, ofertas);
-        lista.setAdapter(adapter);
-        lista.setOnItemClickListener(this);
+        if(getActivity() instanceof ListadoBusqueda) {
+            ((ListadoBusqueda) getActivity()).setListadoListener(this);
+        }
     }
+
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         Intent intent = new Intent(context, DetalleOferta.class);
-        intent.putExtra("oferta", ((OfertasListaAdapter) lista.getAdapter()).getItem(i));
+        DataStorage.currentOferta = ((OfertasListaAdapter) lista.getAdapter()).getItem(i);
         startActivity(intent);
+    }
+
+
+    @Override
+    public void onOfertasLoaded(List<Oferta> ofertas) {
+        OfertasListaAdapter adapter = new OfertasListaAdapter(context, -1, ofertas);
+        lista.setAdapter(adapter);
+        lista.setOnItemClickListener(ListadoBusquedaFragment.this);
     }
 }

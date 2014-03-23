@@ -10,8 +10,7 @@
     android:orientation="vertical"
     tools:context="org.hackatonalm.dignificame.DetalleDenuncia">
 
-    <TextView
-        android:text="Tipo de denuncia"
+    <TextView android:id="@+id/motivo_denuncia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="22sp"
@@ -19,16 +18,14 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="center_vertical"
         android:background="#ddd">
 
-        <TextView
+        <TextView android:id="@+id/comentarios_denuncia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="Clínica dental situada en Jerez de la Fra precisa incorporar Odontólogo-a generalista para al menos dos días completos a la semana( preferiblemente lunes completos y viernes completos)
-
-Buscamos profesional intersado/a en desarrollarse profesionalmente y trabajar con la tecnología mas avanzada."
             android:layout_margin="20dp"
             android:background="#fff"/>
 
