@@ -17,6 +17,8 @@ Estado del desarrollo actual
 ----------------------------
 Las funcionalidades más básicas del portal y las aplicaciones, como son la búsqueda de ofertas, el filtrado y el añadido de denuncias funcionan. Falta incorporar algunas apis (providers) de portales de empleo, corregir fallos menores y depurar la app de iPhone.
 
+Para continuar el proyecto vamos a reescribir todo el código (y liberarlo) con más tiempo y menos sueño ;)
+
 Especificaciones Técnicas
 --------------------------
 + Python (Django, django-rest-framework...)
